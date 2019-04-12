@@ -1,0 +1,54 @@
+﻿一键安装LNMP脚本使用说明：
+以下操作为拥有管理员权限的用户操作
+
+1，服务器配置：
+最小：512MB内存，1核CPU，20G硬盘，可达外网
+最佳：2GB内存，4核CPU，20G硬盘，可达外网
+
+2，系统：计算机节点CentOS7+
+
+3，自行创建~/src/目录
+
+4，请把源码包存放在~/src目录下,源码包列表为：
+	nginx-1.14.0.tar.gz
+	pcre-8.42.zip
+	mysql-5.6.17.tar.gz
+	php-7.1.27.tar.gz
+	cmake-3.14.0.tar.gz
+	下载地址为：
+	http://nginx.org/download/nginx-1.14.0.tar.gz
+	https://jaist.dl.sourceforge.net/project/pcre/pcre/8.42/pcre-8.42.zip
+	http://dev.mysql.com/get/Downloads/MySQL-5.6/mysql-5.6.17.tar.gz
+	http://cn2.php.net/get/php-7.1.27.tar.gz/from/a/mirror
+	https://github.com/Kitware/CMake/releases/download/v3.14.0/cmake-3.14.0.tar.gz
+
+5，/usr/local/src/目录（脚本需要这个目录作为解压源码包存放的目录）
+
+6，网络必须为可达外网，最好就是网络带宽比较好。。。因为要安装编译环境
+
+7，脚本运行完毕后，如输入mysql，nginx命令提示无此命令，请输入以下命令
+source /etc/profile         #加载PATH变量
+并且使用echo $PATH 查看nginx，MYSQL的运行路径是否存放
+
+脚本退出代码查看：
+1：没有管理员权限
+2：当前系统不可达外网
+3：~/src/目录不存在
+4：/usr/local/src/目录不存在
+5：~/src/下的源码文件不完整或不存在
+7：安装gcc,gcc-c++环境失败，可查看/tmp/lnmp.log详细报错信息
+8：编译cmake选项失败，可查看/tmp/lnmp.log详细报错信息
+9：安装nginx编译环境失败，可查看/tmp/lnmp.log详细报错信息
+10：编译nginx选项失败，可查看/tmp/lnmp.log详细报错信息
+12：安装mysql编译环境失败，可查看/tmp/lnmp.log详细报错信息
+13：编译mysql选项失败，可查看/tmp/lnmp.log详细报错信息
+14：安装php编译环境失败，可查看/tmp/lnmp.log详细报错信息
+15：编译php选项环境失败，可查看/tmp/lnmp.log详细报错信息
+
+
+
+
+
+
+
+
